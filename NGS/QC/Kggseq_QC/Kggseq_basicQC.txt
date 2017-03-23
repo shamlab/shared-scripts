@@ -1,0 +1,99 @@
+###Date: 03/24/2017
+###Name: Jacob
+###Input Data: /home/jacobhsu/scripts/shared-scripts/NGS/Example_Input/simple_input.vcf 
+###purpose: (24 trios)  common variant with basic QC
+
+#--lib-update
+--no-lib-check
+--vcf-file /home/jacobhsu/scripts/shared-scripts/NGS/Example_Input/simple_input.vcf
+--ped-file /home/jacobhsu/scripts/shared-scripts/NGS/Example_Input/sample.ped 
+
+
+--gty-qual 20 \
+--gty-dp 8 \
+--gty-af-ref 0.05 \
+--gty-af-het 0.25 \
+--seq-qual 50 \
+--seq-mq 20 \
+
+#--min-obsa 44  \
+--min-obs 60 \
+--ignore-indel \
+#--local-filter-hard /home/groups/pcsham/shared/ALS_DCM/DCM_only_V1/test_20151214/dcm.kggseq.filter.txt.gz \
+--vcf-filter-in PASS,VQSRTrancheSNP90.00to95.00,VQSRTrancheSNP95.00to99.00,VQSRTrancheSNP99.00to99.50 \
+
+#### Genetic Modes
+#=====================================================================
+#--genotype-filter 4,7 \ # for denovo
+#--ignore-homo \ # for denovo
+
+#=====================================================================
+#--genotype-filter 1,2,3,4,6 \ # for recessive
+
+#=====================================================================
+#--double-hit-gene-trio-filter \ # for compound heterozygous
+#--ignore-homo \ # for compound heterozygous
+
+#=====================================================================
+#--genotype-filter 3 \ # for individual burden
+
+#=====================================================================
+#--unique-gene-filter
+
+#=====================================================================
+#--ibs-case-filter 1
+
+#=====================================================================
+#--homozygosity-case-filter 1
+
+--db-filter exac \
+#--rare-allele-freq 0.5001 \
+--allele-freq 0.05,0.5 \
+--db-gene refgene \
+#--gene-feature-in 0,1,2,3,4,5,6 \
+--buildver hg19 \
+--out KGGseq_basicQC.diff \ 
+--nt 8
+--o-vcf
+#--excel
+
+#### Association tests
+############################# Variant-level
+###################################################### chi-squared test
+#--var-assoc 
+#--p-value-cutoff 0.05 
+#--multiple-testing benfdr 
+#--qqplot
+
+###################################################### rvtest
+#--rvtest-var score,wald,exact,dominantExact,famLRT,famScore,famGrammarGamma,firthc
+#--rvtest-vcf 
+#--rvtest-remove-set 
+#--phe  
+#--cov Sex
+
+############################# Gene-level
+###################################################### SKAT
+#--skat-gene
+#--perm-pheno
+###################################################### rvtest
+#--rvtest-gene cmc,cmat,price,skat[nPerm=1000:alpha=0.001:beta1=1:beta2=20],skato[nPerm=1000:alpha=0.001:beta1=1:beta2=20],zeggini,mb,fp,exactCMC,cmcWald,rarecover,cmat 
+#--rvtest-vcf 
+#--rvtest-remove-set
+############################# Geneset-level
+#--skat-geneset
+--resource /home/groups/pcsham/shared/kggseq_V1/20160509/kggseq10r/resources
+
+#### ANNOTATION
+#--mouse-pheno
+#--zebrafish-pheno
+#--ddd-annot
+#--omim-annot
+#--cosmic-annot
+#--scsnv-annot
+--rsid
+#--dgv-cnv-annot
+
+#Variant level Prediction
+#--db-score dbnsfp
+#--mendel-causing-predict all
