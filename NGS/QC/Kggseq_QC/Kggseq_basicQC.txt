@@ -1,12 +1,12 @@
 ###Date: 03/24/2017
 ###Name: Jacob
-###Input Data: /home/jacobhsu/scripts/shared-scripts/NGS/Example_Input/simple_input.vcf 
+###Input Data: shared-scripts/NGS/Example_Input/simple_input.vcf 
 ###purpose: (24 trios)  common variant with basic QC
 
 #--lib-update
 --no-lib-check
---vcf-file /home/jacobhsu/scripts/shared-scripts/NGS/Example_Input/simple_input.vcf
---ped-file /home/jacobhsu/scripts/shared-scripts/NGS/Example_Input/sample.ped 
+--vcf-file ../../Example_Input/simple_input.vcf
+--ped-file ../../Example_Input/sample.ped 
 
 
 --gty-qual 20 \

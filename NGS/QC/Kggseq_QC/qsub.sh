@@ -7,7 +7,7 @@
 #PBS -N KGGseq_QC
 
 
-cd $PBS_O_WORKDIR &&
+cd $PBS_O_WORKDIR
 
 Path=$(pwd)
 txt=$Path/Kggseq_basicQC.txt
