@@ -3,24 +3,22 @@ Sham Lab Shared Scripts
 
 Useful scripts by everybody and for everybody in [Sham lab](https://shamlab.github.io).
 
-To get started, simply [fork](https://github.com/shamlab/shared-scripts#fork-destination-box) this repo.
+To get started, simply fork this repo.
 
 --------
 
-Table of Contents
+### Table of Contents
+
+1. [Contributing](https://github.com/shamlab/shared-scripts#contributing)
+2. [Useful commands](https://github.com/shamlab/shared-scripts#useful-commands)
+3. [Description of directories](https://github.com/shamlab/shared-scripts#description-of-directories)
+⋅⋅1. [Genome-wide association studies](https://github.com/shamlab/shared-scripts#genome-wide-association-studies)
+⋅⋅2. [Next-generation sequencing](https://github.com/shamlab/shared-scripts#next-generation-sequencing)
+⋅⋅3. [Gene expression](https://github.com/shamlab/shared-scripts#gene-expression)
+
 --------
 
-* [Contributing](https://github.com/shamlab/shared-scripts#contributing)
-* [Useful commands](https://github.com/shamlab/shared-scripts#useful-commands)
-* [Description of directories](https://github.com/shamlab/shared-scripts#description-of-directories)
-** [Genome-wide association studies](https://github.com/shamlab/shared-scripts#genome-wide-association-studies)
-** [Next-generation sequencing](https://github.com/shamlab/shared-scripts#next-generation-sequencing)
-** [Gene expression](https://github.com/shamlab/shared-scripts#gene-expression)
-
---------
-
-Contributing
---------
+### Contributing
 
 All members of the [Sham Lab](https://github.com/shamlab) organisation have write access to this repo.
 
@@ -28,36 +26,34 @@ If you are a member of the Sham Lab and wish to contribute to this repo, please 
 
 --------
 
-Useful commands
---------
+### Useful commands
 
 You can use `grep` to search for a keyword in all the scripts.
 
-For instance, if you wish to check which scripts contain the word "vcf", simply give the command --
+For instance, if you wish to check which scripts contain the word `vcf`, simply give the command --
 ```bash
 grep -rl "vcf" /path/to/shared-scripts
 ```
 --------
 
-Description of directories
---------
+### Description of directories
 
-### Genome-wide association studies
+#### Genome-wide association studies
 
 [`shared-scripts/GWAS`](https://github.com/shamlab/shared-scripts/tree/master/GWAS) contains useful scripts for doing genome-wide association studies.
 
 --------
 
-### Next-generation sequencing
+#### Next-generation sequencing
 
 [`shared-scripts/NGS`](https://github.com/shamlab/shared-scripts/tree/master/NGS) contains useful scripts for doing next-generation sequencing analysis.
 
-#### Quality Control
+##### Quality Control
 
 How to do quality control for NGS.
 
 --------
 
-### Gene expression
+#### Gene expression
 
 [`shared-scripts/RNA`](https://github.com/shamlab/shared-scripts/tree/master/RNA) contains useful scripts for doing analysis regarding to gene expression (RNA-seq and CHIP-seq).
