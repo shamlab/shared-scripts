@@ -1,4 +1,4 @@
-Sham Lab Shared Scripts
+Shared Scripts in Sham Lab
 ========
 
 Useful scripts by everybody and for everybody in [Sham lab](https://shamlab.github.io).
@@ -12,9 +12,9 @@ To get started, simply fork this repo.
 1. [Contributing](https://github.com/shamlab/shared-scripts#contributing)
 2. [Useful commands](https://github.com/shamlab/shared-scripts#useful-commands)
 3. [Description of directories](https://github.com/shamlab/shared-scripts#description-of-directories)
-⋅⋅1. [Genome-wide association studies](https://github.com/shamlab/shared-scripts#genome-wide-association-studies)
-⋅⋅2. [Next-generation sequencing](https://github.com/shamlab/shared-scripts#next-generation-sequencing)
-⋅⋅3. [Gene expression](https://github.com/shamlab/shared-scripts#gene-expression)
+  1. [Genome-wide association studies](https://github.com/shamlab/shared-scripts#genome-wide-association-studies)
+  2. [Next-generation sequencing](https://github.com/shamlab/shared-scripts#next-generation-sequencing)
+  3. [Gene expression](https://github.com/shamlab/shared-scripts#gene-expression)
 
 --------
 
@@ -38,6 +38,10 @@ grep -rl "vcf" /path/to/shared-scripts
 
 ### Description of directories
 
+If you are lost in where to find the script you need, please read this section for description of all the subdirectories.
+
+--------
+
 #### Genome-wide association studies
 
 [`shared-scripts/GWAS`](https://github.com/shamlab/shared-scripts/tree/master/GWAS) contains useful scripts for doing genome-wide association studies.
@@ -57,3 +61,4 @@ How to do quality control for NGS.
 #### Gene expression
 
 [`shared-scripts/RNA`](https://github.com/shamlab/shared-scripts/tree/master/RNA) contains useful scripts for doing analysis regarding to gene expression (RNA-seq and CHIP-seq).
+
