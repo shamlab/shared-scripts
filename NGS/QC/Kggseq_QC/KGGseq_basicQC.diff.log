@@ -1,0 +1,53 @@
+INFO  2017-03-24 14:55:56 - 
+@----------------------------------------------------------@
+|        KGGSeq        |     v1.0     |   24/Sep./2016     |
+|----------------------------------------------------------|
+|  (C) 2011 Miaoxin Li,  limx54@yahoo.com                  |
+|----------------------------------------------------------|
+|  For documentation, citation & bug-report instructions:  |
+|              http://grass.cgs.hku.hk/kggseq              |
+@----------------------------------------------------------@
+Effective settings :
+--nt 8
+--resource /home/groups/pcsham/shared/kggseq_V1/20160509/kggseq10r/resources
+--buildver hg19
+--vcf-file ../../Example_Input/simple_input.vcf
+--ped-file ../../Example_Input/sample.ped
+--out KGGseq_basicQC.diff
+--o-vcf
+--seq-qual 50.0
+--seq-mq 20.0
+--gty-qual 20.0
+--gty-dp 8
+--gty-af-ref 0.05
+--gty-af-het 0.25
+--vcf-filter-in PASS,VQSRTrancheSNP90.00to95.00,VQSRTrancheSNP95.00to99.00,VQSRTrancheSNP99.00to99.50
+--min-obs 60
+--db-gene refgene
+--db-filter exac
+--allele-freq 0.05,0.5
+--ignore-indel
+--rsid
+
+INFO  2017-03-24 14:55:56 - Encoding pedigree file ../../Example_Input/sample.ped ...
+INFO  2017-03-24 14:55:57 - Reading variants in /nfs/home/yimingli/shared-scripts/NGS/Example_Input/simple_input.vcf
+INFO  2017-03-24 14:55:57 - 1 thread is created to parse VCF!
+WARN  2017-03-24 14:55:57 - You can create a file with Blocked GNU Zip Format by 'bgzip /nfs/home/yimingli/shared-scripts/NGS/Example_Input/simple_input.vcf', See more  http://www.htslib.org/doc/tabix.html
+INFO  2017-03-24 14:55:57 - The following 63 subject(s) in VCF file are ignored:
+IA682A, IA682B, IA682C, IA683A, IA683B, IA683C, IA689A, IA689B, IA689C, IA691A, IA691B, IA691C, VL10A, VL10B, VL10C, VL11A, VL11B, VL11C, VL17A, VL17B, VL17C, VL19A, VL19B, VL19C, VL22A, VL22B, VL22C, VL23A, VL23B, VL23C, VL26A, VL26B, VL26C, VL27A, VL27B, VL27C, VL28A, VL28B, VL28C, VL30A, VL30B, VL30C, VL31A, VL31B, VL31C, VL33A, VL33B, VL33C, VL34A, VL34B, VL34C, VL6A, VL6B, VL6C, VL9A, VL9B, VL9C, misc_69A, misc_69C_b, misc_69C_t, misc_76A, misc_76B, misc_76C.
+INFO  2017-03-24 14:55:57 - Quality control summaries:
+ 9 missing genotypes are ignored 
+ 4 genotypes are ignored due to low depth at the site with a genotype <8
+ 30 genotypes are ignored due to low quality of specific genotyping quality <20.0
+ 4 genotypes are ignored because the fraction of the reads carrying alternative allele >= 0.05 at a reference-allele homozygous genotype and that is <= 0.25 at a heterozygous genotype and that is <= 0 at an alternative-allele homozygous genotype 
+
+ 1 variants are ignored because the number of alleles is > 4;
+ 8 variants are ignored due to the lack of the vcf FILTER in [VQSRTrancheSNP99.00to99.50, VQSRTrancheSNP90.00to95.00, VQSRTrancheSNP95.00to99.00, PASS]
+ 1 variants are ignored due to low sequencing quality (<50.0)
+ 246 variants are ignored due to the number of non-null genotypes in sample <60
+ 15 Indel variants are ignored
+
+271 variant-lines (15 indels) are scanned; and 0 variants of 9 individual(s) are valid in /nfs/home/yimingli/shared-scripts/NGS/Example_Input/simple_input.vcf
+------------------------------------------------------------
+
+INFO  2017-03-24 14:56:03 - 54394 transcripts of 26457 genes have been read in the dataset kggseq_hg19_refGene.txt.gz!
