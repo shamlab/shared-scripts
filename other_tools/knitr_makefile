@@ -1,0 +1,60 @@
+##################################
+#  Makefile for Knitr/Rmarkdown  #
+##################################
+
+# Sometimes you might have some complicated manuscript writing in RMarkdown (knitr).
+# This makefile makes it easy to compile your document on your computer or server
+# Please adjust the configurations accordingly
+
+
+all: pdf
+
+MAINFILE  := main
+RNWFILES  := 
+RFILES    := 
+TEXFILES  := 
+CACHEDIR  := cache
+FIGUREDIR := figures
+LATEXMK_FLAGS := 
+##### Explicit Dependencies #####
+#################################
+RNWTEX = $(RNWFILES:.Rnw=.tex)
+ROUTFILES = $(RFILES:.R=.Rout)
+RDAFILES= $(RFILES:.R=.rda)
+MAINTEX = $(MAINFILE:=.tex)
+MAINPDF = $(MAINFILE:=.pdf)
+ALLTEX = $(MAINTEX) $(RNWTEX) $(TEXFILES)
+
+# Dependencies
+$(RNWTEX): $(RDAFILES)
+$(MAINTEX): $(RNWTEX) $(TEXFILES)
+$(MAINPDF): $(MAINTEX) $(ALLTEX) 
+
+.PHONY: pdf tex clean 
+
+pdf: $(MAINPDF)
+
+tex: $(RDAFILES) $(ALLTEX) 
+
+%.tex:%.Rnw
+	Rscript \
+	  -e "library(knitr)" \
+	  -e "knitr::opts_chunk[['set']](fig.path='$(FIGUREDIR)/$*-')" \
+	  -e "knitr::opts_chunk[['set']](cache.path='$(CACHEDIR)/$*-')" \
+	  -e "knitr::opts_chunk[['set']](fig.height=4)" \
+	  -e "knitr::knit('$<','$@')"
+
+%.R:%.Rnw
+	Rscript -e "Sweave('$^', driver=Rtangle())"
+
+%.Rout:%.R
+	R CMD BATCH "$^" "$@"
+
+%.pdf: %.tex 
+	latexmk -pdf $<
+
+clean:
+	-latexmk -c -quiet $(MAINFILE).tex
+	-rm -f $(MAINTEX) $(RNWTEX)
+	-rm -rf $(FIGUREDIR)
+	-rm $(MAINPDF)
