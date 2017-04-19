@@ -13,14 +13,16 @@
 --gty-dp 8 \
 --gty-af-ref 0.05 \
 --gty-af-het 0.25 \
---seq-qual 50 \
+--seq-qual 30 \
 --seq-mq 20 \
+--hwe-control 0.01 \
+
 
 #--min-obsa 44  \
---min-obs 60 \
---ignore-indel \
-#--local-filter-hard /home/groups/pcsham/shared/ALS_DCM/DCM_only_V1/test_20151214/dcm.kggseq.filter.txt.gz \
---vcf-filter-in PASS,VQSRTrancheSNP90.00to95.00,VQSRTrancheSNP95.00to99.00,VQSRTrancheSNP99.00to99.50 \
+#--min-obs 9 \
+#--ignore-indel \
+#--local-filter-hard /dcm.kggseq.filter.txt.gz \
+#--vcf-filter-in PASS,VQSRTrancheSNP90.00to95.00,VQSRTrancheSNP95.00to99.00,VQSRTrancheSNP99.00to99.50 \
 
 #### Genetic Modes
 #=====================================================================

@@ -11,6 +11,6 @@ cd $PBS_O_WORKDIR
 
 Path=$(pwd)
 txt=$Path/Kggseq_basicQC.txt
-kggseq=/home/groups/pcsham/shared/kggseq_V1/20160816/kggseq20160924.jar
+kggseq=/psychipc01/disk2/software/KGGseq/20170401/kggseq10/kggseq_20170401.jar
 
-java -jar $kggseq $txt
+/psychipc01/disk2/software/java-8/jdk1.8.0_111/bin/java -jar $kggseq $txt

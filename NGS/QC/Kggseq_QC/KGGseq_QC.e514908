@@ -1,7 +1,0 @@
-java.io.FileNotFoundException: /nfs/home/groups/pcsham/shared/kggseq_V1/20160509/kggseq10r/resources/HgncGene.txt (Permission denied)
-	at java.io.FileInputStream.open(Native Method)
-	at java.io.FileInputStream.<init>(FileInputStream.java:146)
-	at org.cobi.util.text.LocalFile.retrieveData(Unknown Source)
-	at org.cobi.kggseq.controller.VariantAnnotator.readGeneNames(Unknown Source)
-	at org.cobi.kggseq.CUIApp.process(Unknown Source)
-	at org.cobi.kggseq.CUIApp.main(Unknown Source)
