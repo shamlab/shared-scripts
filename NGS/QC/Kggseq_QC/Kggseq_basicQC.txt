@@ -22,7 +22,13 @@
 #--min-obs 9 \
 #--ignore-indel \
 #--local-filter-hard /dcm.kggseq.filter.txt.gz \
+
+#### VQSR filtering
+#=====================================================================
 #--vcf-filter-in PASS,VQSRTrancheSNP90.00to95.00,VQSRTrancheSNP95.00to99.00,VQSRTrancheSNP99.00to99.50 \
+# This step is skipped for github shared-scripts as there are too few variants in simple_input.vcf for normal VQSR. Please consider to add this setting for your real dataset. 
+#=====================================================================
+
 
 #### Genetic Modes
 #=====================================================================
